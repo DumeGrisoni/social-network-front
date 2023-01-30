@@ -1,0 +1,56 @@
+@import '../../styles/style.scss';
+
+.sidebar {
+  @include flex(column, space-between, flex-start);
+  height: calc(100vh - 51px);
+  width: auto;
+  background: #1e1e22;
+  border-right: 1px solid $secondary-color;
+  .links {
+    padding: 20px;
+    @include flex(column, space-between, flex-start);
+    gap: 20px;
+    .container {
+      @include flex(row, space-between, center);
+      text-decoration: none;
+      :hover {
+        @include icons-hover;
+      }
+      .icons {
+        @include icons;
+        margin-right: 1rem;
+      }
+      span {
+        color: $main-color;
+      }
+    }
+  }
+
+  hr {
+    width: 90%;
+    margin-left: 8px;
+    border: 1px solid $secondary-color;
+  }
+
+  .friends {
+    @include flex(column, center, flex-start);
+    h2 {
+      margin-left: 20px;
+      font-weight: bold;
+      color: $secondary-color;
+    }
+    .container {
+      padding: 20px;
+      gap: 20px;
+      @include flex(row, space-between, center);
+      text-decoration: none;
+      color: $secondary-color;
+      :hover {
+        @include icons-hover;
+      }
+      p {
+        color: $main-color;
+      }
+    }
+  }
+}

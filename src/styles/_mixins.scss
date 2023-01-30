@@ -1,0 +1,86 @@
+@import './variables';
+
+@mixin flex($direction: column, $justify: center, $align: center) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin heading {
+  font-size: $heading;
+  color: $main-color-hover;
+  line-height: $heading-hl;
+}
+@mixin span-title {
+  color: $main-color;
+  font-size: $heading;
+  line-height: $heading-hl;
+}
+
+@mixin title {
+  font-size: $title;
+  color: $main-color-hover;
+}
+
+@mixin p-tags {
+  color: $secondary-color-hover;
+  text-align: center;
+  font-size: $p-tag;
+}
+
+@mixin span-text {
+  color: $tertiary-color-light;
+  font-size: $spans-text;
+  font-weight: $span-text-weight;
+}
+
+@mixin buttons(
+  $bg-color: $secondary-color,
+  $bg-color-hover: $secondary-color-hover,
+  $color: $tertiary-color-dark
+) {
+  width: $button-width;
+  padding: 10px;
+  border: $button-border;
+  background-color: $bg-color;
+  color: $color;
+  border-radius: $border-radius;
+  font-weight: $button-weight;
+  cursor: $button-cursor;
+  transition: all ease-in 0.1s;
+
+  &:hover {
+    background-color: $bg-color-hover;
+  }
+}
+
+@mixin form {
+  @include flex($direction: column, $justify: center, $align: center);
+  width: 100%;
+  gap: 20px;
+  input {
+    border: $form-input-border;
+    background: $form-input-background;
+    border-bottom: 1px solid $tertiary-color-light;
+    width: 50%;
+    color: $tertiary-color-light;
+    font-size: 16px;
+  }
+}
+
+@mixin shadows($spread: 2px, $blur: 10px, $shadow-color: $shadow-color) {
+  -webkit-box-shadow: 4px 5px $blur $spread $shadow-color;
+  box-shadow: 4px 5px $blur $spread $shadow-color;
+}
+
+@mixin icons {
+  height: 25px;
+  width: 25px;
+  color: $secondary-color;
+}
+
+@mixin icons-hover {
+  color: $secondary-color-hover;
+  transition: ease-in 0.1s;
+}
