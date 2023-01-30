@@ -1,27 +1,62 @@
 @import '../../styles/style.scss';
 
 .sidebar {
-  @include flex(column, space-between, flex-start);
+  flex: 1;
+  position: sticky;
+  top: 51px;
   height: calc(100vh - 51px);
-  width: auto;
   background: #1e1e22;
-  border-right: 1px solid $secondary-color;
+  border-right: 1px solid $tertiary-color-light;
+  overflow-y: scroll;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
   .links {
-    padding: 20px;
-    @include flex(column, space-between, flex-start);
-    gap: 20px;
+    @include flex(
+      $direction: column,
+      $justify: space-between,
+      $align: flex-start
+    );
     .container {
+      @include links;
+      padding: 20px;
+      gap: 20px;
       @include flex(row, space-between, center);
-      text-decoration: none;
-      :hover {
-        @include icons-hover;
-      }
-      .icons {
-        @include icons;
-        margin-right: 1rem;
-      }
-      span {
-        color: $main-color;
+    }
+  }
+
+  .recommended {
+    @include flex(column, space-between, flex-start);
+    h2 {
+      margin-top: 20px;
+      margin-left: 20%;
+      font-size: 16px;
+      color: $secondary-color;
+    }
+    .container {
+      color: $tertiary-color-light;
+      padding: 20px;
+      gap: 20px;
+      @include flex($direction: row, $justify: space-between, $align: center);
+      .follow {
+        .red {
+          cursor: pointer;
+          color: lightcoral;
+          transition: all 0.2s ease-in-out;
+          &:hover {
+            transform: scale(1.1);
+          }
+        }
+        .green {
+          cursor: pointer;
+          color: $secondary-color-hover;
+          transition: all 0.2s ease-in-out;
+          &:hover {
+            transform: scale(1.1);
+          }
+        }
       }
     }
   }
@@ -29,28 +64,22 @@
   hr {
     width: 90%;
     margin-left: 8px;
-    border: 1px solid $secondary-color;
+    border: 1px solid $tertiary-color-light;
   }
 
   .friends {
-    @include flex(column, center, flex-start);
+    @include flex(column, space-between, flex-start);
     h2 {
-      margin-left: 20px;
-      font-weight: bold;
+      margin-top: 20px;
+      margin-left: 25%;
+      font-size: 16px;
       color: $secondary-color;
     }
     .container {
+      @include links;
       padding: 20px;
       gap: 20px;
-      @include flex(row, space-between, center);
-      text-decoration: none;
-      color: $secondary-color;
-      :hover {
-        @include icons-hover;
-      }
-      p {
-        color: $main-color;
-      }
+      @include flex($direction: row, $justify: space-between, $align: center);
     }
   }
 }

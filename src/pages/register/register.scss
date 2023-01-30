@@ -18,10 +18,14 @@
     @include flex($direction: column, $justify: center, $align: center);
     padding: 50px;
     min-height: 400px;
-    background-color: $background-card-light;
+    background-color: $background-card-dark;
     gap: 30px;
     color: $tertiary-color-light;
-    @include shadows;
+    @include button-shadow(
+      $spread: 0.5px,
+      $blur: 20px,
+      $shadow: $tertiary-color-light
+    );
 
     h1 {
       @include heading;
@@ -47,11 +51,7 @@
       text-decoration: none;
       .connexion {
         @include shadows($spread: 0.5px, $blur: 20px);
-        @include buttons(
-          $bg-color: $main-color,
-          $bg-color-hover: $main-color-hover,
-          $color: $secondary-color-hover
-        );
+        @include buttons;
       }
     }
     hr {
@@ -63,12 +63,12 @@
       @include form;
 
       button {
-        @include shadows($spread: 0.5px, $blur: 20px);
-        @include buttons(
-          $bg-color: $secondary-color,
-          $bg-color-hover: $secondary-color-hover,
-          $color: $tertiary-color-dark
+        @include button-shadow(
+          $spread: 0.5px,
+          $blur: 20px,
+          $shadow: $tertiary-color-light
         );
+        @include buttons;
       }
     }
   }

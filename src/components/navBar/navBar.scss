@@ -1,27 +1,34 @@
 @import '../../styles/style.scss';
 
 nav {
-  background: rgba(7, 17, 17, 1);
+  background: $tertiary-color-dark;
   @include flex(row, space-between, center);
-  border-bottom: 1px solid $secondary-color;
-  max-height: 51px;
+  border-bottom: 1px solid $tertiary-color-light;
+  height: 50px;
   position: sticky;
   top: 0;
+
   .left {
     flex: 1;
     @include flex(row, flex-start, center);
     a {
       text-decoration: none;
     }
+
     .logo {
       height: 50px;
       width: 50px;
     }
+
     span {
       @include flex(row, flex-start, center);
       @include p-tags;
-      color: $secondary-color;
+      color: $tertiary-color-light;
       font-weight: bold;
+      transition: all 0.2s ease;
+      &:hover {
+        color: $secondary-color;
+      }
     }
   }
   .center {
@@ -56,7 +63,7 @@ nav {
       @include flex(row, space-around, center);
       width: 50%;
       .icon {
-        @include icons;
+        @include links;
       }
     }
   }

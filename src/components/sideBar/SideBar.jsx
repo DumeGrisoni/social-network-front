@@ -4,6 +4,8 @@ import {
   LibraryBooksIcon,
   HomeIcon,
   ImageIcon,
+  ClearIcon,
+  CheckIcon,
 } from '../../components';
 import './sideBar.scss';
 
@@ -28,9 +30,38 @@ const SideBar = () => {
           <span>Mes Créations</span>
         </Link>
       </section>
+
       <hr />
+      <section className="recommended">
+        <h2>Recommandation</h2>
+        <div className="container">
+          <ImageIcon className="icons" />
+          <span>Jon doe</span>
+          <div className="follow">
+            <ClearIcon className="red" />
+            <CheckIcon className="green" />
+          </div>
+        </div>
+      </section>
+
+      <hr />
+
       <section className="friends">
-        <h2>Mes liens</h2>
+        <h2>Contacts</h2>
+        <div>
+          <Link to="/" className="container">
+            <ImageIcon className="icons" />
+            <p>Jean Massimi</p>
+          </Link>
+        </div>
+        <Link to="/" className="container">
+          <ImageIcon className="icons" />
+          <p>Jean Massimi</p>
+        </Link>
+        <Link to="/" className="container">
+          <ImageIcon className="icons" />
+          <p>Jean Massimi</p>
+        </Link>
         <Link to="/" className="container">
           <ImageIcon className="icons" />
           <p>Jean Massimi</p>

@@ -7,51 +7,57 @@
   align-items: $align;
 }
 
+// Texts
+
 @mixin heading {
   font-size: $heading;
   color: $main-color-hover;
   line-height: $heading-hl;
 }
 @mixin span-title {
-  color: $main-color;
+  color: $secondary-color;
   font-size: $heading;
   line-height: $heading-hl;
 }
 
 @mixin title {
   font-size: $title;
-  color: $main-color-hover;
+  color: $secondary-color;
 }
 
 @mixin p-tags {
-  color: $secondary-color-hover;
+  color: $tertiary-color-light;
   text-align: center;
   font-size: $p-tag;
 }
 
 @mixin span-text {
-  color: $tertiary-color-light;
+  color: $secondary-color;
   font-size: $spans-text;
   font-weight: $span-text-weight;
 }
 
-@mixin buttons(
-  $bg-color: $secondary-color,
-  $bg-color-hover: $secondary-color-hover,
-  $color: $tertiary-color-dark
-) {
-  width: $button-width;
-  padding: 10px;
-  border: $button-border;
-  background-color: $bg-color;
-  color: $color;
+//Components
+
+@mixin buttons {
   border-radius: $border-radius;
   font-weight: $button-weight;
-  cursor: $button-cursor;
-  transition: all ease-in 0.1s;
-
+  font-size: $p-tag;
+  width: $button-width;
+  padding: 5px;
+  border: $button-border;
+  background: $background-card-light;
+  color: $tertiary-color-light;
+  transition: all 0.2s ease-in-out;
+  @include shadows(1px, 5px, black);
   &:hover {
-    background-color: $bg-color-hover;
+    color: $secondary-color-hover;
+    background: $background-card-dark;
+    @include button-shadow(
+      $spread: px,
+      $blur: 5px,
+      $shadow: $secondary-color-hover
+    );
   }
 }
 
@@ -69,18 +75,30 @@
   }
 }
 
-@mixin shadows($spread: 2px, $blur: 10px, $shadow-color: $shadow-color) {
-  -webkit-box-shadow: 4px 5px $blur $spread $shadow-color;
-  box-shadow: 4px 5px $blur $spread $shadow-color;
+//Shadows
+
+@mixin shadows($spread: 2px, $blur: 10px, $shadow: $shadow-color) {
+  -webkit-box-shadow: 4px 5px $blur $spread $shadow;
+  box-shadow: 4px 5px $blur $spread $shadow;
 }
 
-@mixin icons {
-  height: 25px;
-  width: 25px;
-  color: $secondary-color;
+@mixin button-shadow(
+  $spread: 2px,
+  $blur: 10px,
+  $shadow: $tertiary-color-light
+) {
+  -webkit-box-shadow: 0px 0px $blur $spread $shadow;
+  box-shadow: 0px 0px $blur $spread $shadow;
 }
 
-@mixin icons-hover {
-  color: $secondary-color-hover;
-  transition: ease-in 0.1s;
+//Icons
+
+@mixin links {
+  font-weight: 500;
+  text-decoration: none;
+  color: $tertiary-color-light;
+  &:hover {
+    color: $secondary-color;
+    transition: ease-in 0.1s;
+  }
 }

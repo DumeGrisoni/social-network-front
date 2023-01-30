@@ -1,25 +1,23 @@
-$main-color: #22707b;
-$main-color-hover: #289ca1;
-$secondary-color: #a3c6cc;
-$secondary-color-hover: #f2faff;
-$tertiary-color-light: #95b0b5;
-$tertiary-color-dark: #324b4f;
-$background-card-dark: #324b4f30;
-$background-card-light: #95b0b530;
+$main-color: #21273c;
+$main-color-hover: #e8efff;
+
+$secondary-color-hover: #00c6c0;
+$secondary-color: #0099e2;
+
+$tertiary-color-light: #a7aabc;
+$tertiary-color-dark: #1e1e22;
+
+$background-card-dark: #21273c50;
+$background-card-light: #e8efff30;
 $shadow-color: black;
 
-$bg-color: radial-gradient(
-  circle,
-  rgba(7, 17, 17, 1) 0%,
-  rgba(13, 44, 48, 1) 100%
-);
-$reverse-bg-color: radial-gradient(
-  circle,
-  rgba(13, 44, 48, 1) 0%,
-  rgba(7, 17, 17, 1) 100%
+$bg-color: linear-gradient(
+  35deg,
+  rgba(0, 198, 192, 1) 0%,
+  rgba(33, 39, 60, 1) 60%
 );
 
-$heading: 60px;
+$heading: 56px;
 $heading-hl: 70px;
 $title: 36px;
 $p-tag: 14px;
@@ -28,7 +26,7 @@ $span-text-weight: light;
 
 $button-weight: bold;
 $button-width: 50%;
-$button-border: none;
+$button-border: 1px solid $tertiary-color-light;
 $button-cursor: pointer;
 $border-radius: 10px;
 

@@ -1,12 +1,7 @@
 @import '../../styles/style.scss';
 .login {
   height: 100vh;
-  background: rgb(7, 17, 17);
-  background: radial-gradient(
-    circle,
-    rgba(7, 17, 17, 1) 0%,
-    rgba(13, 44, 48, 1) 100%
-  );
+  background: $bg-color;
   @include flex($direction: row, $justify: flex-end, $align: center);
 
   img {
@@ -22,7 +17,7 @@
     @include flex($direction: column, $justify: center, $align: center);
     padding: 50px;
     min-height: 400px;
-    background-color: $background-card-dark;
+    background: $background-card-dark;
     gap: 30px;
     color: $tertiary-color-light;
     @include shadows;
@@ -50,11 +45,7 @@
       @include flex($direction: row, $justify: center, $align: center);
       .inscription {
         @include shadows($spread: 0.5px, $blur: 20px);
-        @include buttons(
-          $bg-color: $secondary-color,
-          $bg-color-hover: $secondary-color-hover,
-          $color: $tertiary-color-dark
-        );
+        @include buttons;
       }
     }
     hr {
@@ -66,12 +57,7 @@
       @include form;
 
       button {
-        @include shadows($spread: 0.5px, $blur: 20px);
-        @include buttons(
-          $bg-color: $main-color,
-          $bg-color-hover: $main-color-hover,
-          $color: $secondary-color-hover
-        );
+        @include buttons;
       }
     }
   }
