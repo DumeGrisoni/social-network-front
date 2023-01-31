@@ -4,10 +4,9 @@ import {
   LibraryBooksIcon,
   HomeIcon,
   ImageIcon,
-  ClearIcon,
-  CheckIcon,
 } from '../../components';
 import './sideBar.scss';
+import photo from '../../assets/SP_Viking_Hero_AI.png';
 
 const SideBar = () => {
   return (
@@ -32,68 +31,31 @@ const SideBar = () => {
       </section>
 
       <hr />
-      <section className="recommended">
-        <h2>Recommandation</h2>
-        <div className="container">
-          <ImageIcon className="icons" />
-          <span>Jon doe</span>
-          <div className="follow">
-            <ClearIcon className="red" />
-            <CheckIcon className="green" />
-          </div>
-        </div>
-      </section>
-
-      <hr />
 
       <section className="friends">
         <h2>Contacts</h2>
-        <div>
+        <div className="users">
+          <div className="dot" />
+          <div className="offline" />
+          <img src={photo} alt="" />
           <Link to="/" className="container">
-            <ImageIcon className="icons" />
             <p>Jean Massimi</p>
           </Link>
         </div>
-        <Link to="/" className="container">
-          <ImageIcon className="icons" />
-          <p>Jean Massimi</p>
-        </Link>
-        <Link to="/" className="container">
-          <ImageIcon className="icons" />
-          <p>Jean Massimi</p>
-        </Link>
-        <Link to="/" className="container">
-          <ImageIcon className="icons" />
-          <p>Jean Massimi</p>
-        </Link>
-        <Link to="/" className="container">
-          <ImageIcon className="icons" />
-          <p>Jean Massimi</p>
-        </Link>
-        <Link to="/" className="container">
-          <ImageIcon className="icons" />
-          <p>Jean Massimi</p>
-        </Link>
-        <Link to="/" className="container">
-          <ImageIcon className="icons" />
-          <p>Jean Massimi</p>
-        </Link>
-        <Link to="/" className="container">
-          <ImageIcon className="icons" />
-          <p>Jean Massimi</p>
-        </Link>
-        <Link to="/" className="container">
-          <ImageIcon className="icons" />
-          <p>Jean Massimi</p>
-        </Link>
-        <Link to="/" className="container">
-          <ImageIcon className="icons" />
-          <p>Jean Massimi</p>
-        </Link>
-        <Link to="/" className="container">
-          <ImageIcon className="icons" />
-          <p>Jean Massimi</p>
-        </Link>
+        <div className="users">
+          <div className="online" />
+          <img src={photo} alt="" />
+          <Link to="/" className="container">
+            <p>Amelie Jeanbrillancourt</p>
+          </Link>
+        </div>
+        <div className="users">
+          <div className="online" />
+          <img src={photo} alt="" />
+          <Link to="/" className="container">
+            <p>Pierre Rochefort</p>
+          </Link>
+        </div>
       </section>
     </div>
   );

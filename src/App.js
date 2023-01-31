@@ -5,6 +5,7 @@ import {
   Navigate,
   Outlet,
 } from 'react-router-dom';
+import './styles/style.scss';
 
 import { NavBar, SideBar } from './components';
 

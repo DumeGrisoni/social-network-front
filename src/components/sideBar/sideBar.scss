@@ -5,7 +5,7 @@
   position: sticky;
   top: 51px;
   height: calc(100vh - 51px);
-  background: #1e1e22;
+  background: $tertiary-color-dark;
   border-right: 1px solid $tertiary-color-light;
   overflow-y: scroll;
 
@@ -24,40 +24,7 @@
       padding: 20px;
       gap: 20px;
       @include flex(row, space-between, center);
-    }
-  }
-
-  .recommended {
-    @include flex(column, space-between, flex-start);
-    h2 {
-      margin-top: 20px;
-      margin-left: 20%;
-      font-size: 16px;
-      color: $secondary-color;
-    }
-    .container {
-      color: $tertiary-color-light;
-      padding: 20px;
-      gap: 20px;
-      @include flex($direction: row, $justify: space-between, $align: center);
-      .follow {
-        .red {
-          cursor: pointer;
-          color: lightcoral;
-          transition: all 0.2s ease-in-out;
-          &:hover {
-            transform: scale(1.1);
-          }
-        }
-        .green {
-          cursor: pointer;
-          color: $secondary-color-hover;
-          transition: all 0.2s ease-in-out;
-          &:hover {
-            transform: scale(1.1);
-          }
-        }
-      }
+      font-size: $p-tag;
     }
   }
 
@@ -71,15 +38,55 @@
     @include flex(column, space-between, flex-start);
     h2 {
       margin-top: 20px;
-      margin-left: 25%;
-      font-size: 16px;
+      font-size: $spans-text;
       color: $secondary-color;
+      font-weight: 400;
+      margin-left: 20px;
+      margin-bottom: 20px;
     }
-    .container {
-      @include links;
-      padding: 20px;
-      gap: 20px;
-      @include flex($direction: row, $justify: space-between, $align: center);
+    .users {
+      @include flex(row, space-between, center);
+      padding: 10px 20px;
+      position: relative;
+
+      .online {
+        background: green;
+        height: 10px;
+        width: 10px;
+        border-radius: 50%;
+        position: absolute;
+        top: 10px;
+        left: 12px;
+      }
+
+      .dot {
+        background: red;
+        height: 10px;
+        width: 10px;
+        border-radius: 50%;
+        position: absolute;
+        top: 10px;
+        left: 12px;
+      }
+      .offline {
+        background-color: #1e1e2280;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+      }
+
+      img {
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+      }
+      .container {
+        padding: 0 20px;
+        @include links;
+
+        font-size: $p-tag;
+        color: $tertiary-color-light;
+      }
     }
   }
 }

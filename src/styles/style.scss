@@ -1,2 +1,21 @@
 @import './_variables.scss';
 @import './_mixins.scss';
+
+$themes: (
+  light: (
+    textColor: $main-color,
+    iconsColor: $tertiary-color-dark,
+    hoverColor: $secondary-color-hover,
+    backgroundColor: $tertiary-color-light,
+    mainBackgroundColor: $main-color-hover,
+    borderColor: $tertiary-color-dark,
+  ),
+  dark: (
+    iconsColor: $tertiary-color-light,
+    hoverColor: $secondary-color,
+    mainBackgroundColor: $main-color,
+    textColor: $tertiary-color-light,
+    backgroundColor: $main-color,
+    borderColor: $tertiary-color-light,
+  ),
+);
