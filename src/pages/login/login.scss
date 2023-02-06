@@ -46,6 +46,9 @@
       .inscription {
         @include shadows($spread: 0.5px, $blur: 20px);
         @include buttons;
+        &:hover {
+          @include button-shadow;
+        }
       }
     }
     hr {
@@ -58,6 +61,10 @@
 
       button {
         @include buttons;
+
+        &:hover {
+          @include button-shadow;
+        }
       }
     }
   }

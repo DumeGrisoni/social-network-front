@@ -1,0 +1,18 @@
+@import '../../../styles/style.scss';
+
+.addCreation {
+  padding: 20px;
+  margin: 20px 20px;
+  @include flex(column, flex-start, center);
+
+  form {
+    padding: 20px;
+    @include flex(column, flex-start, center);
+    width: 100%;
+    gap: 20px;
+    border: $tertiary-color-light 1px solid;
+    background: $tertiary-color-dark;
+    color: $tertiary-color-light;
+    border-radius: $border-radius;
+  }
+}

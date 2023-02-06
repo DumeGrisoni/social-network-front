@@ -1,0 +1,100 @@
+@import '../../styles/style.scss';
+
+.creations {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  margin: 10px;
+  gap: 10px;
+
+  .creation {
+    position: relative;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .infos {
+      position: absolute;
+      padding: 10px;
+      bottom: 0px;
+      height: 100%;
+      width: 88.5%;
+      @include flex(row, flex-start, flex-end);
+      transition: opacity 0.2s ease-in;
+
+      img {
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        opacity: 0;
+        transition: opacity 0.2s ease-in;
+        flex: 1;
+      }
+
+      .creator {
+        @include flex(column, flex-start, center);
+        flex: 3;
+        .name {
+          font-size: $spans-text;
+          font-weight: bold;
+          color: $tertiary-color-light;
+          opacity: 0;
+          transition: opacity 0.2s ease-in;
+          a {
+            @include flex(column, center, center);
+            color: $tertiary-color-light;
+            text-decoration: none;
+
+            &:hover {
+              color: $secondary-color-hover;
+            }
+          }
+          p {
+            font-size: $spans-text;
+            font-weight: 400;
+          }
+        }
+
+        .title {
+          text-align: center;
+          font-size: $p-tag;
+          color: $secondary-color;
+          opacity: 0;
+          transition: opacity 0.2s ease-in;
+        }
+      }
+
+      &:hover {
+        opacity: 1;
+        background: linear-gradient(
+          180deg,
+          rgba(0, 198, 192, 0) 50%,
+          rgba(33, 39, 60, 0.6) 70%
+        );
+        img {
+          opacity: 1;
+        }
+        .name {
+          opacity: 1;
+        }
+        .title {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .posts {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+  }
+}
+@media screen and (max-width: 480px) {
+  .posts {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(20, 1fr);
+  }
+}

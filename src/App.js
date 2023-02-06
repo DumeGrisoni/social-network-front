@@ -1,4 +1,4 @@
-import { Home, Login, Register, UserProfile } from './pages';
+import { Home, Login, Register, Creation, CreatorProfile } from './pages';
 import {
   createBrowserRouter,
   RouterProvider,
@@ -41,7 +41,8 @@ function App() {
       ),
       children: [
         { path: '/', element: <Home /> },
-        { path: '/userProfile/:id', element: <UserProfile /> },
+        { path: '/creations/:creationId', element: <Creation /> },
+        { path: '/creator/:creatorId', element: <CreatorProfile /> },
       ],
     },
     {

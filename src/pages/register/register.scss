@@ -21,11 +21,7 @@
     background-color: $background-card-dark;
     gap: 30px;
     color: $tertiary-color-light;
-    @include button-shadow(
-      $spread: 0.5px,
-      $blur: 20px,
-      $shadow: $tertiary-color-light
-    );
+    @include shadows;
 
     h1 {
       @include heading;
@@ -52,6 +48,9 @@
       .connexion {
         @include shadows($spread: 0.5px, $blur: 20px);
         @include buttons;
+        &:hover {
+          @include button-shadow;
+        }
       }
     }
     hr {
@@ -63,12 +62,10 @@
       @include form;
 
       button {
-        @include button-shadow(
-          $spread: 0.5px,
-          $blur: 20px,
-          $shadow: $tertiary-color-light
-        );
         @include buttons;
+        &:hover {
+          @include button-shadow;
+        }
       }
     }
   }
